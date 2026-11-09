@@ -1,0 +1,60 @@
+{
+  "pdf_sha256": "059dcb1609e63abff0f49f3c143c0eabd8b03621f142dce16f108d10b66c66e1",
+  "pages": 11,
+  "embedded_fonts": {
+    "/AAAAAA+Tinos-Regular": true,
+    "/AAAAAA+TamakiPaperSans-Semibold": true,
+    "/AAAAAB+TamakiPaperSans-Semibold": true,
+    "/AAAAAA+TamakiPaperSerif-Regular": true,
+    "/AAAAAB+TamakiPaperSerif-Regular": true,
+    "/AAAAAC+TamakiPaperSerif-Regular": true,
+    "/AAAAAD+TamakiPaperSerif-Regular": true,
+    "/AAAAAA+Tinos-Bold": true,
+    "/AAAAAA+Tinos-Italic": true,
+    "/AAAAAA+DejaVuSans": true,
+    "/AAAAAA+SourceCodePro-Regular": true
+  },
+  "unembedded_fonts": [],
+  "unique_text_blocks_checked": 217,
+  "missing_text_blocks": [],
+  "out_of_bounds_blocks": [],
+  "unique_external_links": [
+    "https://arxiv.org/abs/2611.00839",
+    "https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final",
+    "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final",
+    "https://eips.ethereum.org/EIPS/eip-7702",
+    "https://eprint.iacr.org/2015/1008",
+    "https://github.com/mavis-codee",
+    "https://web.mit.edu/Saltzer/www/publications/protection/",
+    "https://www.binance.com/en-NG/support/announcement/detail/d3306d9dca5243548c813b605e1d1751",
+    "https://www.binance.com/en/blog/community/3229153443759566763",
+    "https://www.fbi.gov/investigate/cyber/alerts/2026/north-korea-responsible-for-6-billion-binance-attack",
+    "https://www.okx.com/wallet-security",
+    "https://www.rfc-editor.org/rfc/rfc9591.html",
+    "https://www.trmlabs.com/resources/blog/north-korea-steals-usd-6-36-billion-from-binance-in-the-largest-hack-in-history",
+    "mailto:kojitamaki223@gmail.com"
+  ],
+  "references": 12,
+  "model_results_match": true,
+  "source_sha256": "a0d4dbb4ef7ef3ef9d7bbf21aec07ac3c12135879137a392fb783c4d90709787",
+  "visual_review": {
+    "pages_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "renderer": "Poppler pdftoppm 140 dpi",
+    "missing_glyphs": false,
+    "clipping_or_overlap": false,
+    "tables_kept_together": true,
+    "formula_numbering_checked": true
+  }
+}

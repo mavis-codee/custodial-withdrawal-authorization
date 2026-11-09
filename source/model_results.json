@@ -1,0 +1,1905 @@
+{
+  "model_version": "1.0",
+  "max_depth": 5,
+  "actions_per_state": 18,
+  "initial_asset_units": 2,
+  "initial_entitlements": {
+    "alice": 2,
+    "mallory": 0
+  },
+  "role_dimensions": [
+    "backend",
+    "signing_quorum",
+    "governance",
+    "recovery"
+  ],
+  "cryptography": "abstract ideal predicates; no signatures implemented",
+  "scope": "synthetic finite-state authorization model, not a deployed protocol or exchange audit",
+  "configurations": [
+    {
+      "configuration": {
+        "name": "EOA_threshold_only",
+        "guard": false,
+        "intent_check": true,
+        "ledger_check": true,
+        "nonce_check": true,
+        "admin_bypass": false,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 12,
+      "reachable_states_sum": 48,
+      "transition_attempts": 864,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "raw(None)"
+            ],
+            "payment": {
+              "intent_id": "raw",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "raw(None)"
+            ],
+            "payment": {
+              "intent_id": "raw",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "raw(None)"
+            ],
+            "payment": {
+              "intent_id": "raw",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "raw(None)"
+            ],
+            "payment": {
+              "intent_id": "raw",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_all_controls",
+        "guard": true,
+        "intent_check": true,
+        "ledger_check": true,
+        "nonce_check": true,
+        "admin_bypass": false,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 0,
+      "reachable_states_sum": 48,
+      "transition_attempts": 864,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_without_intent",
+        "guard": true,
+        "intent_check": false,
+        "ledger_check": true,
+        "nonce_check": true,
+        "admin_bypass": false,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 8,
+      "reachable_states_sum": 48,
+      "transition_attempts": 864,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_not_in_independent_intent_registry",
+            "trace": [
+              "operator(A,0,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_without_ledger",
+        "guard": true,
+        "intent_check": true,
+        "ledger_check": false,
+        "nonce_check": true,
+        "admin_bypass": false,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 8,
+      "reachable_states_sum": 132,
+      "transition_attempts": 2304,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 9,
+          "transition_attempts": 162,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 9,
+          "transition_attempts": 162,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 18,
+          "transition_attempts": 306,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 18,
+          "transition_attempts": 306,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 9,
+          "transition_attempts": 162,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 9,
+          "transition_attempts": 162,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 18,
+          "transition_attempts": 306,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 18,
+          "transition_attempts": 306,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "forge_ledger(1)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_without_nonce",
+        "guard": true,
+        "intent_check": true,
+        "ledger_check": true,
+        "nonce_check": false,
+        "admin_bypass": false,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 16,
+      "reachable_states_sum": 48,
+      "transition_attempts": 864,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "same_intent_executed_more_than_once",
+            "trace": [
+              "user(A,0,alice,1,chain-A)",
+              "user(A,0,alice,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "A",
+              "principal": 0,
+              "destination": "alice",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_with_admin_bypass",
+        "guard": true,
+        "intent_check": true,
+        "ledger_check": true,
+        "nonce_check": true,
+        "admin_bypass": true,
+        "recovery_bypass": false
+      },
+      "role_configurations": 16,
+      "violating_configurations": 8,
+      "reachable_states_sum": 80,
+      "transition_attempts": 1440,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "disable(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "configuration": {
+        "name": "guard_with_recovery_bypass",
+        "guard": true,
+        "intent_check": true,
+        "ledger_check": true,
+        "nonce_check": true,
+        "admin_bypass": false,
+        "recovery_bypass": true
+      },
+      "role_configurations": 16,
+      "violating_configurations": 8,
+      "reachable_states_sum": 72,
+      "transition_attempts": 1296,
+      "runs": [
+        {
+          "roles": [],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "signing_quorum"
+          ],
+          "reachable_states": 2,
+          "transition_attempts": 36,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "signing_quorum"
+          ],
+          "reachable_states": 4,
+          "transition_attempts": 72,
+          "counterexample": null
+        },
+        {
+          "roles": [
+            "backend",
+            "governance",
+            "recovery",
+            "signing_quorum"
+          ],
+          "reachable_states": 8,
+          "transition_attempts": 144,
+          "counterexample": {
+            "reason": "payment_exceeds_independent_entitlement",
+            "trace": [
+              "recover(None)",
+              "user(M,1,mallory,1,chain-A)"
+            ],
+            "payment": {
+              "intent_id": "M",
+              "principal": 1,
+              "destination": "mallory",
+              "amount": 1,
+              "chain": "chain-A"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "total_role_configurations": 112,
+  "total_transition_attempts": 8496,
+  "positive_control": "authorized withdrawal executes",
+  "availability_counterexample": "governance pause blocks withdrawal but does not move assets",
+  "model_sha256": "ea231180271dc7e16247a3949582360034612278e83c891b9a7ef7f358b8ac1e"
+}

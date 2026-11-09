@@ -1,0 +1,5 @@
+# Preserve bytes: model results record the SHA-256 of model_check.py.
+* -text
+*.pdf binary
+*.png binary
+*.ttf binary
